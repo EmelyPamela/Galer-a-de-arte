@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje al Arte</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background: #000;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            opacity: 0;
+            /* Ocultar barra al inicio */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #preloader img {
+            width: 300px;
+            /* Tamaño aumentado */
+            height: auto;
+        }
+
+        #loading-text {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Animación de los tres puntos */
+        #dots span {
+            animation: dots 1.5s infinite;
+            font-size: 1.5rem;
+        }
+
+        #dots span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        #dots span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes dots {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Contenido principal oculto al inicio */
+        #main-content {
+            display: none;
+        }
+
+        /* Media queries para diseño responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 0.5rem 0;
+            }
+
+            .navbar a {
+                margin: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            #preloader img {
+                width: 200px;
+            }
+
+            #loading-text {
+                font-size: 1.2rem;
+            }
+
+            #dots span {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                padding: 0.3rem 0;
+            }
+
+            .navbar a {
+                margin: 0.3rem 0;
+                font-size: 0.8rem;
+            }
+
+            #preloader img {
+                width: 150px;
+            }
+
+            #loading-text {
+                font-size: 1rem;
+            }
+
+            #dots span {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="Imagenes/carga.gif" alt="Cargando...">
+        <div id="loading-text">
+            Viajando<span id="dots"><span>.</span><span>.</span><span>.</span></span>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div id="main-content">
+        <div class="navbar">
+            <a href="inicio.html">Inicio</a>
+            <a href="ViajeAlArte.html">Viaje al arte</a>
+            <a href="#artistas">Artistas</a>
+        </div>
+    </div>
+
+    <script>
+        // Ocultar el preloader después de 6 segundos
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            const mainContent = document.getElementById('main-content');
+            const navbar = document.querySelector('.navbar');
+
+            preloader.style.display = 'none'; // Ocultar preloader
+            mainContent.style.display = 'block'; // Mostrar contenido
+            navbar.style.opacity = 1; // Hacer visible la barra de navegación
+        }, 6000); // 6 segundos
+    </script>
+</body>
+
+</html>
