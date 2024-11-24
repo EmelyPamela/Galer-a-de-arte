@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+
+    <style>
+        body {
+            background: url('Imagenes/fondo3.gif') center/cover no-repeat;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            position: relative;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .navbar img {
+            height: 40px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        .transparent-box {
+            background: rgba(0, 0, 0, 0.6);
+            width: 95%;
+            height: 85%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 400px;
+            transition: transform 1s ease-in-out;
+            transform-origin: center center;
+            object-fit: contain;
+        }
+
+        .logo-container img:hover {
+            transform: rotateY(180deg);
+        }
+
+        .text-container {
+            flex: 2;
+            text-align: justify;
+            padding-left: 2rem;
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .text-container h1,
+        .text-container h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .text-container h2 {
+            margin-top: 2rem;
+        }
+
+        .text-container p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#inicio">Inicio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#artistas">Artistas</a>
+    </div>
+    <div class="transparent-box">
+        <div class="logo-container">
+            <img src="Imagenes/logo1.png" alt="Logo de la Galería">
+        </div>
+        <div class="text-container">
+            <h1>Bienvenido a NexusPinturas</h1>
+            <p>
+                Bienvenidos a la Galería de Arte. Aquí encontrarás una selección única de obras artísticas,
+                información sobre los artistas destacados y detalles sobre nuestras exposiciones. Explora y
+                déjate inspirar por la creatividad y el arte en su máxima expresión. Además, nuestra galería
+                tiene fines educativos y está dedicada al estudio y la preservación del arte, respetando siempre
+                los derechos de los autores.
+            </p>
+
+            <h2>¿Qué es una galería de arte?</h2>
+            <p>
+                Una galería de arte es un espacio dedicado a la exhibición de obras artísticas, donde se
+                exponen pinturas, esculturas y otros tipos de creaciones visuales. Las galerías pueden ser
+                tanto privadas como públicas, y su propósito es promover el arte, la cultura y el conocimiento.
+                En NexusPinturas, buscamos ofrecer un lugar de encuentro para artistas y aficionados al arte,
+                promoviendo el aprendizaje y la reflexión sobre las diversas formas de expresión artística.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
