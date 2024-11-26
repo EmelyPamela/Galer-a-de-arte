@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaje al Arte</title>
     <style>
-        
-        /* Estilos generales */
         body {
             background: #000;
             margin: 0;
@@ -43,7 +41,6 @@
             color: #ffcc00;
         }
 
-        /* Carrusel */
         .carousel {
             position: absolute;
             top: 400px;
@@ -51,7 +48,7 @@
             transform: translate(-50%, -50%);
             width: 300px;
             height: 300px;
-            perspective: 1000px; /* Efecto de profundidad */
+            perspective: 1000px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,9 +58,9 @@
             width: 100%;
             height: 100%;
             position: relative;
-            transform-style: preserve-3d; /* Mantiene el efecto 3D */
-            transform-origin: center; /* Centro del carrusel */
-            animation: rotate 20s linear infinite; /* Rotación sobre el eje Y */
+            transform-style: preserve-3d;
+            transform-origin: center;
+            animation: rotate 20s linear infinite;
         }
 
         .carousel__item {
@@ -84,18 +81,16 @@
             transition: transform 0.3s ease;
         }
 
-        /* Zoom al pasar el cursor */
         .carousel__item:hover {
-            transform: scale(1.5); /* Aumenta el zoom a 1.5 veces su tamaño original */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Intensifica la sombra */
-            z-index: 20; /* Asegúrate de que el elemento esté sobre los demás */
+            transform: scale(1.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            z-index: 20;
         }
 
         .carousel__item:hover img {
             transform: scale(1.2);
         }
 
-        /* Espaciado entre imágenes */
         .carousel__item:nth-child(1) {
             transform: rotateY(0deg) translateZ(400px);
         }
@@ -128,7 +123,6 @@
             transform: rotateY(315deg) translateZ(400px);
         }
 
-        /* Animación */
         @keyframes rotate {
             0% {
                 transform: rotateY(0deg);
@@ -139,7 +133,6 @@
             }
         }
 
-        /* Preloader */
         #preloader {
             position: fixed;
             top: 0;
@@ -196,7 +189,6 @@
             }
         }
 
-        /* Ventana emergente (modal) */
         #modal {
             display: none;
             position: fixed;
@@ -224,10 +216,9 @@
             cursor: pointer;
         }
 
-        /* Contenido principal */
         #main-content {
             display: none;
-        }   
+        }
     </style>
 </head>
 
@@ -247,65 +238,57 @@
             <a href="#artistas">Artistas</a>
         </div>
 
-        
-        
+
+
     </div>
-    
+
     <div class="carousel">
-        <!-- Carrusel -->
         <div class="carousel__content">
-            <div class="carousel__item" onclick="openModal('Imagenes/imG.png')">
-                <img src="imagenes/logo1.png" alt="Descripción Imagen 1">
+            <div class="carousel__item" onclick="openModal('Imagenes/imagen1.png')">
+                <img src="Imagenes/lamonalisa.png" alt="Descripción Imagen 1">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen2.jpg')">
-                <img src="imagenes/imagen2.jpg" alt="Descripción Imagen 2">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen2.png')">
+                <img src="imagenes/jovendelaperla.png" alt="Descripción Imagen 2">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen3.jpg')">
-                <img src="imagenes/imagen3.jpg" alt="Descripción Imagen 3">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen3.png')">
+                <img src="imagenes/elgrito.png" alt="Descripción Imagen 3">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen4.jpg')">
-                <img src="imagenes/imagen4.jpg" alt="Descripción Imagen 4">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen4.png')">
+                <img src="imagenes/lanocheestrellada.png" alt="Descripción Imagen 4">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen5.jpg')">
-                <img src="imagenes/imagen5.jpg" alt="Descripción Imagen 5">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen5.png')">
+                <img src="imagenes/lamujerconsombrilla.png" alt="Descripción Imagen 5">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen6.jpg')">
-                <img src="imagenes/imagen6.jpg" alt="Descripción Imagen 6">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen6.png')">
+                <img src="imagenes/damaconventilador.png" alt="Descripción Imagen 6">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen7.jpg')">
-                <img src="imagenes/imagen7.jpg" alt="Descripción Imagen 7">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen7.png')">
+                <img src="imagenes/latazadete.png" alt="Descripción Imagen 7">
             </div>
-            <div class="carousel__item" onclick="openModal('imagenes/imagen8.jpg')">
-                <img src="imagenes/imagen8.jpg" alt="Descripción Imagen 8">
+            <div class="carousel__item" onclick="openModal('imagenes/imagen8.png')">
+                <img src="imagenes/lasmeninas.png" alt="Descripción Imagen 8">
             </div>
         </div>
     </div>
-    <!-- Ventana emergente (modal) -->
     <div id="modal">
         <span id="close-modal" onclick="closeModal()">&times;</span>
         <img id="modal-image" src="" alt="Imagen Ampliada">
         <div id="modal-text">
-            <p id="modal-description"> HECHO POR MI NOVIA LA MEJOR ARTISTA</p>  <!-- Aquí se insertará el texto -->
         </div>
     </div>
 
     <script>
-        // Ocultar el preloader después de 6 segundos
         setTimeout(() => {
             const preloader = document.getElementById('preloader');
             const mainContent = document.getElementById('main-content');
             const navbar = document.querySelector('.navbar');
 
-            preloader.style.display = 'none'; // Ocultar preloader
-            mainContent.style.display = 'block'; // Mostrar contenido
-            navbar.style.opacity = 1; // Hacer visible la barra de navegación
-        }, 6000); // 6 segundos
-
-        // Obtener el carrusel
+            preloader.style.display = 'none';
+            mainContent.style.display = 'block';
+            navbar.style.opacity = 1;
+        }, 6000);
         const carouselContent = document.querySelector('.carousel__content');
         const carouselItems = document.querySelectorAll('.carousel__item');
-
-        // Pausar la animación al pasar el cursor sobre una imagen
         carouselItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 carouselContent.style.animationPlayState = 'paused';
@@ -315,19 +298,15 @@
                 carouselContent.style.animationPlayState = 'running';
             });
         });
-
-        // Función para abrir el modal
         function openModal(imageSrc, description) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalDescription = document.getElementById('modal-description');
-    
-    modal.style.display = 'flex';
-    modalImage.src = imageSrc;
-    modalDescription.innerText = description;  // Agregar texto de descripción
-}
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalDescription = document.getElementById('modal-description');
 
-        // Función para cerrar el modal
+            modal.style.display = 'flex';
+            modalImage.src = imageSrc;
+            modalDescription.innerText = description;
+        }
         function closeModal() {
             const modal = document.getElementById('modal');
             modal.style.display = 'none';
