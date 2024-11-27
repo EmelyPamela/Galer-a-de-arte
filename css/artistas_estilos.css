@@ -1,16 +1,14 @@
-/* Asegúrate de que el body tenga suficiente altura para hacer scroll */
 body {
   background: #000;
   margin: 0;
   font-family: Arial, sans-serif;
   color: #000;
   position: relative;
-  height: 200vh; /* Asegura suficiente altura para hacer scroll */
+  height: 200vh;
 }
 
-/* Barra de navegación fija en la parte superior */
 .navbar {
-  position: fixed; /* Fija la barra en la parte superior */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,7 +20,6 @@ body {
   z-index: 10;
 }
 
-/* Estilos de los enlaces de la barra */
 .navbar a {
   text-decoration: none;
   color: #fff;
@@ -36,12 +33,10 @@ body {
   color: #ffcc00;
 }
 
-/* Contenedor principal */
 .ctn_principal {
   padding-top: 100px;
 }
 
-/* Subcontenedores - Animación de deslizamiento */
 .contenedor {
   background-color: #f4f4f4;
   padding: 20px;
@@ -54,13 +49,11 @@ body {
   border-radius: 10px;
 }
 
-/* Cuando el contenedor se vuelve visible */
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Estilos para el contenedor de la imagen */
 .imagen-container {
   display: flex;
   align-items: center;
@@ -70,7 +63,6 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* Estilo de la imagen */
 .imagen {
   width: 100%;
   max-width: 300px;
@@ -79,7 +71,6 @@ body {
   margin: 0 20px 0 280px;
 }
 
-/* Estilo de la descripción (oculta inicialmente) */
 .descripcion {
   opacity: 0;
   transform: translateY(20px);
@@ -87,12 +78,11 @@ body {
   color: #333;
   font-size: 1rem;
   margin-left: 20px;
-  text-align: justify; /* Justifica el texto */
+  text-align: justify;
 }
 
-/* Cuando la imagen se mueve y aparece la descripción */
 .imagen-container.mover .imagen {
-  transform: translateX(-100px); /* Mueve la imagen a la derecha */
+  transform: translateX(-100px);
 }
 
 .imagen-container .descripcion.mostrar {
@@ -100,87 +90,77 @@ body {
   transform: translateY(0);
 }
 
-/* Al hacer clic, la imagen y la descripción se alternan */
 .imagen-container.mover {
-  flex-direction: row-reverse; /* Cambiar la posición de la imagen y la descripción */
+  flex-direction: row-reverse;
 }
 
 .h1 {
-  position: absolute; /* Posición absoluta dentro del contenedor */
-  top: 50%; /* 50% desde el top */
+  position: absolute;
+  top: 50%;
   color: #fff;
   margin: 0;
 }
 
-/* Personalizar la barra de desplazamiento */
 ::-webkit-scrollbar {
-  width: 12px; /* Ancho de la barra */
+  width: 12px;
 }
 
-/* Personalizar el track (parte estática) */
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Color de fondo del track */
+  background-color: #f1f1f1;
   border-radius: 10px;
 }
 
-/* Personalizar el thumb (la parte que se mueve) */
 ::-webkit-scrollbar-thumb {
-  background-color: #eec3d8; /* Color rosa (puedes cambiarlo al que desees) */
+  background-color: #eec3d8;
   border-radius: 10px;
-  border: 2px solid #ccc; /* Borde del thumb */
-  animation: pintar 2s infinite linear; /* Si quieres animación */
+  border: 2px solid #ccc;
+  animation: pintar 2s infinite linear;
 }
 
-/* Animación del pincel (si decides aplicarla) */
 @keyframes pintar {
   0% {
-    background-position: 0 0; /* Inicio de la animación */
+    background-position: 0 0;
   }
   100% {
-    background-position: 100% 0; /* Desplaza la imagen para simular el pincel pintando */
+    background-position: 100% 0;
   }
 }
 
-/* Opcional: Personalizar el hover del thumb */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f1bfd8; /* Color rosa más intenso al hacer hover */
+  background-color: #f1bfd8;
 }
 
-/* Estilo para el botón debajo de la descripción */
 .btn-ver-pinturas {
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Texto blanco */
-  font-size: 1rem; /* Tamaño de la fuente */
-  padding: 10px 20px; /* Relleno dentro del botón */
-  margin-top: 10px; /* Separación desde la descripción */
-  border: none; /* Eliminar el borde */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar el cursor a mano */
-  transition: opacity 0.3s ease; /* Animación para la visibilidad */
-  opacity: 0; /* Inicialmente invisible */
-  pointer-events: none; /* No permite interacciones cuando está oculto */
-  width: 100%; /* Asegurarse de que el botón tenga el mismo ancho que el contenedor */
-  text-align: center; /* Centrar el texto del botón */
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  text-align: center;
 }
 
-/* Efecto hover para el botón */
 .btn-ver-pinturas:hover {
-  background-color: #333; /* Cambio de color en hover */
+  background-color: #333;
 }
 
-/* Mostrar el botón cuando la descripción es visible */
 .imagen-container .descripcion.mostrar + .btn-ver-pinturas {
-  opacity: 1; /* Hacer visible el botón cuando la descripción es visible */
-  pointer-events: all; /* Permitir interacciones con el botón */
+  opacity: 1;
+  pointer-events: all;
 }
 
-/* Estilo para el mensaje de deslizar */
 #scroll-message {
   position: fixed;
-  top: 50%; /* Centrado vertical */
-  left: 50%; /* Centrado horizontal */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -188,7 +168,7 @@ body {
   font-size: 1.2rem;
   z-index: 100;
   opacity: 1;
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Añadir transición de visibilidad */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: visible;
 }
 
@@ -196,19 +176,102 @@ body {
   margin: 0;
 }
 
-/* Estilo de la flecha */
-.arrow {
-  margin-top: 10px;
-  width: 30px;
-  height: 30px;
-  border-left: 4px solid #fff;
-  border-bottom: 4px solid #fff;
-  transform: rotate(45deg);
-  margin-left: 12px;
-}
-
-/* Ocultar el mensaje cuando el usuario ha desplazado */
 .scrolled #scroll-message {
   opacity: 0;
   visibility: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .navbar a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+
+  .imagen {
+    max-width: 250px;
+    margin: 0 20px;
+  }
+
+  .descripcion {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .imagen-container.mover {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+
+  .contenedor {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .imagen-container {
+    flex-direction: column; /* Cambié esta línea a column */
+    text-align: center;
+  }
+
+  .imagen {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .btn-ver-pinturas {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen-container.mover {
+    flex-direction: column;
+  }
+  .navbar a {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .imagen {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .descripcion {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .contenedor {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .btn-ver-pinturas {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  #scroll-message {
+    font-size: 1rem;
+    padding: 15px;
+  }
 }

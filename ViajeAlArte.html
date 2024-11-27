@@ -219,6 +219,61 @@
         #main-content {
             display: none;
         }
+
+        @media (max-width: 768px) {
+            .carousel {
+                width: 90%;
+                max-width: 500px;
+            }
+
+            .carousel__item {
+                width: 70%;
+                max-width: 200px;
+            }
+
+            .navbar a {
+                font-size: 0.9rem;
+                margin: 0 0.5rem;
+            }
+
+            #preloader img {
+                width: 200px;
+            }
+
+            #loading-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .carousel__item {
+                width: 60%;
+                max-width: 180px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                margin: 0.5rem 0;
+            }
+
+            #preloader img {
+                width: 150px;
+            }
+
+            #loading-text {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 

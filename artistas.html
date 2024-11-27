@@ -17,10 +17,7 @@
             <a href="artistas.html">Artistas</a>
         </div>
     </div>
-
-    <!-- Contenedor con imagen y descripción alternada -->
     <div class="ctn_principal">
-        <!-- Contenedor 1 -->
         <div class="contenedor reveal">
             <div class="imagen-container">
                 <img src="img-Pintores/Caravaggio.png" alt="Descripción de la imagen" class="imagen" />
@@ -33,11 +30,10 @@
                     emocional, mostrando detalles crudos y realistas. Caravaggio también tuvo una vida tumultuosa,
                     marcada por la violencia y los conflictos, lo que influyó en su arte. Murió en circunstancias
                     misteriosas a los 38 años, dejando un legado duradero en el mundo del arte.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/caravaggio">Ver pinturas
+                    famosas</button>
             </div>
         </div>
-
-        <!-- Contenedor 2 -->
         <div class="contenedor reveal">
             <div class="imagen-container">
                 <img src="img-Pintores/Picasso.png" alt="Descripción de la imagen" class="imagen" />
@@ -51,11 +47,10 @@
                     la
                     escultura, la cerámica y el grabado, dejando un legado que transformó la historia del arte moderno.
                     Falleció en Francia a los 91 años.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/pablo-picasso">Ver pinturas
+                    famosas</button>
             </div>
         </div>
-
-        <!-- Contenedor 3 -->
         <div class="contenedor reveal">
             <div class="imagen-container">
                 <img src="img-Pintores/EdouardManet.png" alt="Descripción de la imagen" class="imagen" />
@@ -69,11 +64,10 @@
                     cultura urbana de París. Sus obras provocaron escándalos en el Salón de París, pero también
                     influyeron en generaciones posteriores de artistas. Murió a los 51 años, dejando una huella
                     perdurable en el arte moderno.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/edouard-manet">Ver pinturas
+                    famosas</button>
             </div>
         </div>
-
-        <!-- Contenedor 4 -->
         <div class="contenedor reveal">
             <div class="imagen-container">
                 <img src="img-Pintores/FranciscodeGoya.png" alt="Descripción de la imagen" class="imagen" />
@@ -88,7 +82,8 @@
                     capacidad para plasmar el sufrimiento humano, la crítica social y la oscuridad de la psique. En sus
                     últimos años, sufrió sordera, lo que marcó un cambio en su obra hacia temas más sombríos. Murió
                     en Burdeos, Francia, a los 82 años.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/francisco-de-goya">Ver pinturas
+                    famosas</button>
             </div>
         </div>
 
@@ -105,7 +100,8 @@
                     largo de su carrera, Rubens creó una vasta cantidad de cuadros religiosos, mitológicos y retratos, y
                     su influencia se extendió por generaciones. Murió en Amberes, dejando un legado duradero en la
                     pintura barroca.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/peter-paul-rubens">Ver pinturas
+                    famosas</button>
             </div>
         </div>
 
@@ -125,7 +121,8 @@
                     delicado de la piel y la luz. A pesar de sufrir dolores debido a una artritis severa en sus últimos
                     años,
                     continuó pintando hasta su muerte.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/pierre-auguste-renoir">Ver
+                    pinturas famosas</button>
             </div>
         </div>
 
@@ -140,7 +137,8 @@
                     donde creó obras religiosas, retratos y escenas cotidianas con un enfoque innovador. A pesar de su
                     éxito temprano, sufrió problemas financieros y personales en sus últimos años. Su legado incluye
                     una profunda influencia en el arte barroco y la evolución del retrato psicológico.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/rembrandt">Ver pinturas
+                    famosas</button>
             </div>
         </div>
 
@@ -156,13 +154,14 @@
                     fantásticos y paranoicos, influenciado por la psicoanálisis de Freud. Su estilo extravagante y su
                     personalidad excéntrica lo convirtieron en una figura icónica en el mundo del arte. Murió en su
                     ciudad natal a los 84 años.</p>
-                <button class="btn-ver-pinturas">Ver pinturas famosas</button>
+                <button class="btn-ver-pinturas" data-link="https://www.wikiart.org/es/salvador-dali">Ver pinturas
+                    famosas</button>
             </div>
         </div>
     </div>
 
     <div id="scroll-message">
-        <p>Desliza hacia abajo para ver más</p>
+        <p>Desliza hacia abajo para ver más y haz click en la foto del artista</p>
         <div class="arrow"></div>
     </div>
 
@@ -199,7 +198,7 @@
             });
         });
 
-        let messageHidden = false;  // Variable de estado para controlar si el mensaje ha desaparecido
+        let messageHidden = false;
 
         document.addEventListener('scroll', function () {
             const reveals = document.querySelectorAll('.reveal');
@@ -214,21 +213,25 @@
             });
 
             const scrollMessage = document.getElementById('scroll-message');
-
-            // Si no se ha ocultado aún, ocultamos el mensaje al desplazarse más de 300 píxeles
             if (!messageHidden && window.scrollY > 300) {
                 scrollMessage.style.display = 'none';
-                messageHidden = true;  // Actualizamos el estado para no mostrar el mensaje en el futuro
+                messageHidden = true;
             }
         });
 
         window.addEventListener('load', function () {
             const scrollMessage = document.getElementById('scroll-message');
-
-            // Solo mostramos el mensaje si el scroll es 0 y el mensaje aún no ha sido ocultado
             if (!messageHidden && window.scrollY === 0) {
                 scrollMessage.style.display = 'block';
             }
+        });
+        document.querySelectorAll('.btn-ver-pinturas').forEach(function (boton) {
+            boton.addEventListener('click', function () {
+                const link = boton.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;
+                }
+            });
         });
 
     </script>
