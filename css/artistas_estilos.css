@@ -1,215 +1,214 @@
 /* Asegúrate de que el body tenga suficiente altura para hacer scroll */
 body {
-    background: #000;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    position: relative;
-    height: 200vh; /* Asegura suficiente altura para hacer scroll */
+  background: #000;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #000;
+  position: relative;
+  height: 200vh; /* Asegura suficiente altura para hacer scroll */
 }
 
 /* Barra de navegación fija en la parte superior */
 .navbar {
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 10;
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 /* Estilos de los enlaces de la barra */
 .navbar a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    margin: 0 1rem;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 1rem;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #ffcc00;
+  color: #ffcc00;
 }
 
 /* Contenedor principal */
 .ctn_principal {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 /* Subcontenedores - Animación de deslizamiento */
 .contenedor {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    border-radius: 10px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  border-radius: 10px;
 }
 
 /* Cuando el contenedor se vuelve visible */
 .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Estilos para el contenedor de la imagen */
 .imagen-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 20px 0;
-    transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+  transition: transform 0.5s ease;
 }
 
 /* Estilo de la imagen */
 .imagen {
-    width: 100%;
-    max-width: 300px;
-    cursor: pointer;
-    transition: transform 0.6s ease;
-    margin: 0 20px 0 280px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+  margin: 0 20px 0 280px;
 }
 
 /* Estilo de la descripción (oculta inicialmente) */
 .descripcion {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    color: #333;
-    font-size: 1rem;
-    margin-left: 20px;
-    text-align: justify; /* Justifica el texto */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #333;
+  font-size: 1rem;
+  margin-left: 20px;
+  text-align: justify; /* Justifica el texto */
 }
 
 /* Cuando la imagen se mueve y aparece la descripción */
 .imagen-container.mover .imagen {
-    transform: translateX(-100px); /* Mueve la imagen a la derecha */
+  transform: translateX(-100px); /* Mueve la imagen a la derecha */
 }
 
 .imagen-container .descripcion.mostrar {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Al hacer clic, la imagen y la descripción se alternan */
 .imagen-container.mover {
-    flex-direction: row-reverse; /* Cambiar la posición de la imagen y la descripción */
+  flex-direction: row-reverse; /* Cambiar la posición de la imagen y la descripción */
 }
 
 .h1 {
-    position: absolute; /* Posición absoluta dentro del contenedor */
-    top: 50%; /* 50% desde el top */
-    color: #fff;
-    margin: 0;
+  position: absolute; /* Posición absoluta dentro del contenedor */
+  top: 50%; /* 50% desde el top */
+  color: #fff;
+  margin: 0;
 }
 
 /* Personalizar la barra de desplazamiento */
 ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra */
+  width: 12px; /* Ancho de la barra */
 }
 
 /* Personalizar el track (parte estática) */
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Color de fondo del track */
-    border-radius: 10px;
+  background-color: #f1f1f1; /* Color de fondo del track */
+  border-radius: 10px;
 }
 
 /* Personalizar el thumb (la parte que se mueve) */
 ::-webkit-scrollbar-thumb {
-    background-color: #eec3d8; /* Color rosa (puedes cambiarlo al que desees) */
-    border-radius: 10px;
-    border: 2px solid #ccc; /* Borde del thumb */
-    animation: pintar 2s infinite linear; /* Si quieres animación */
+  background-color: #eec3d8; /* Color rosa (puedes cambiarlo al que desees) */
+  border-radius: 10px;
+  border: 2px solid #ccc; /* Borde del thumb */
+  animation: pintar 2s infinite linear; /* Si quieres animación */
 }
 
 /* Animación del pincel (si decides aplicarla) */
 @keyframes pintar {
-    0% {
-        background-position: 0 0; /* Inicio de la animación */
-    }
-    100% {
-        background-position: 100% 0; /* Desplaza la imagen para simular el pincel pintando */
-    }
+  0% {
+    background-position: 0 0; /* Inicio de la animación */
+  }
+  100% {
+    background-position: 100% 0; /* Desplaza la imagen para simular el pincel pintando */
+  }
 }
 
 /* Opcional: Personalizar el hover del thumb */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #f1bfd8; /* Color rosa más intenso al hacer hover */
+  background-color: #f1bfd8; /* Color rosa más intenso al hacer hover */
 }
 
 /* Estilo para el botón debajo de la descripción */
 .btn-ver-pinturas {
-    background-color: #000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    font-size: 1rem; /* Tamaño de la fuente */
-    padding: 10px 20px; /* Relleno dentro del botón */
-    margin-top: 10px; /* Separación desde la descripción */
-    border: none; /* Eliminar el borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar el cursor a mano */
-    transition: opacity 0.3s ease; /* Animación para la visibilidad */
-    opacity: 0; /* Inicialmente invisible */
-    pointer-events: none; /* No permite interacciones cuando está oculto */
-    width: 100%; /* Asegurarse de que el botón tenga el mismo ancho que el contenedor */
-    text-align: center; /* Centrar el texto del botón */
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  font-size: 1rem; /* Tamaño de la fuente */
+  padding: 10px 20px; /* Relleno dentro del botón */
+  margin-top: 10px; /* Separación desde la descripción */
+  border: none; /* Eliminar el borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor a mano */
+  transition: opacity 0.3s ease; /* Animación para la visibilidad */
+  opacity: 0; /* Inicialmente invisible */
+  pointer-events: none; /* No permite interacciones cuando está oculto */
+  width: 100%; /* Asegurarse de que el botón tenga el mismo ancho que el contenedor */
+  text-align: center; /* Centrar el texto del botón */
 }
 
 /* Efecto hover para el botón */
 .btn-ver-pinturas:hover {
-    background-color: #333; /* Cambio de color en hover */
+  background-color: #333; /* Cambio de color en hover */
 }
 
 /* Mostrar el botón cuando la descripción es visible */
 .imagen-container .descripcion.mostrar + .btn-ver-pinturas {
-    opacity: 1; /* Hacer visible el botón cuando la descripción es visible */
-    pointer-events: all; /* Permitir interacciones con el botón */
+  opacity: 1; /* Hacer visible el botón cuando la descripción es visible */
+  pointer-events: all; /* Permitir interacciones con el botón */
 }
-
 
 /* Estilo para el mensaje de deslizar */
 #scroll-message {
-    position: fixed;
-    top: 50%; /* Centrado vertical */
-    left: 50%; /* Centrado horizontal */
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1.2rem;
-    z-index: 100;
-    opacity: 1;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Añadir transición de visibilidad */
-    visibility: visible;
+  position: fixed;
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Añadir transición de visibilidad */
+  visibility: visible;
 }
 
 #scroll-message p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Estilo de la flecha */
 .arrow {
-    margin-top: 10px;
-    width: 30px;
-    height: 30px;
-    border-left: 4px solid #fff;
-    border-bottom: 4px solid #fff;
-    transform: rotate(45deg);
-    margin-left: 12px;
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  transform: rotate(45deg);
+  margin-left: 12px;
 }
 
 /* Ocultar el mensaje cuando el usuario ha desplazado */
 .scrolled #scroll-message {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
